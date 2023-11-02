@@ -10,7 +10,7 @@ const IncReducers = (state = data, action) => {
       case ADDTASK:
         axios.post(`${process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE}/data`,{task:action.payload.task,status:action.payload.status})
         data=state.state;
-        const uuid=0;
+        let uuid=0;
         if(data.length==0){
           uuid=0;
         }
