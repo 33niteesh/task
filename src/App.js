@@ -7,7 +7,7 @@ function App({setdata,data,task,edittask,delettask,addtask}) {
   const [tasks,setTasks]=useState({id:"",task:"",status:false});
   const [user,setUser]=useState({username:"",password:""})
   useEffect(()=>{
-      axios.get(`http://localhost:3001/data`).then(e=>setdata(e.data)).then(setTasks(task.state))
+      axios.get(`${process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE}/data`).then(e=>setdata(e.data)).then(setTasks(task.state))
   },[])
 
   const add=(tasks)=>{
