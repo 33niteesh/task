@@ -16,11 +16,6 @@
     "redux-devtools-extension": "^2.13.9"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "data": "json-server --watch data.json --port 3001",
     "start": "concurrently --kill-others \"react-scripts start\" \"npx json-server --watch data/db.json --port 8000\"",
   },
   "eslintConfig": {
