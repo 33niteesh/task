@@ -8,7 +8,7 @@ const IncReducers = (state = data, action) => {
         state
       };
       case ADDTASK:
-        axios.post(`${process.env.REACT_API}/data`,{task:action.payload.task,status:action.payload.status})
+        axios.post(`${process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE}/data`,{task:action.payload.task,status:action.payload.status})
         data=state.state;
         let uuid=0;
         if(data.length==0){
@@ -31,7 +31,7 @@ const IncReducers = (state = data, action) => {
         if(action.payload.status==false){
           s="completed"
         }
-        axios.put(`${process.env.REACT_API}/data/${action.payload.id}`,{task:action.payload.task,status:s})
+        axios.put(`${process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE}/data/${action.payload.id}`,{task:action.payload.task,status:s})
         let d=[]
         for(let k=0;k<data.length;k++){
           if(data[k].id!=action.payload.id){
@@ -44,7 +44,7 @@ const IncReducers = (state = data, action) => {
           state:data
         }
       case DELETTASK:
-        axios.delete(`${process.env.REACT_API}/data/${action.payload}`)
+        axios.delete(`${process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE}/data/${action.payload}`)
         let f=[]
         for(let k=0;k<data.length;k++){
           if(data[k].id!=action.payload){
