@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "data": "json-server --watch data.json --port 3001",
-    "start": "concurrently \"npm run dev\" \"npm run data\" "
+    "start": "concurrently --kill-others \"react-scripts start\" \"npx json-server --watch data/db.json --port 8000\"",
   },
   "eslintConfig": {
     "extends": [
